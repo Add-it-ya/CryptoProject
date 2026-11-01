@@ -1,0 +1,13 @@
+{
+  "name": "@cryptovault/crypto-core",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Shared crypto: base AES-ECC scheme (Node only) + proposed AHE scheme (WebCrypto, browser + Node)",
+  "exports": {
+    ".": "./src/index.js",
+    "./base": "./src/base_aes_ecc.js",
+    "./proposed": "./src/proposed_ahe.js",
+    "./analysis": "./src/analysis.js",
+    "./encoding": "./src/encoding.js"
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "meta": {
+    "date": "2026-11-01T02:26:08.655Z",
+    "node": "v22.23.4",
+    "openssl": "3.5.9",
+    "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+    "cores": 4,
+    "platform": "Linux 6.18.44-fc-v185",
+    "quick": false
+  },
+  "e1_public_key_attack": {
+    "files": 100,
+    "base_recovered": 100,
+    "proposed_recovered": 0,
+    "proposed_candidate_keys_tried": 1000,
+    "note": "attacker knows only public information (public keys + stored ciphertext/manifest)"
+  },
+  "e2_tampering": {
+    "bit_flip": {
+      "trials": 250,
+      "base": {
+        "detected": 0,
+        "silent_corruption": 250
+      },
+      "proposed": {
+        "detected": 250,
+        "silent_corruption": 0
+      }
+    },
+    "block_swap": {
+      "trials": 250,
+      "base": {
+        "detected": 0,
+        "silent_corruption": 246
+      },
+      "proposed": {
+        "detected": 250,
+        "silent_corruption": 0
+      }
+    },
+    "block_delete": {
+      "trials": 250,
+      "base": {
+        "detected": 0,
+        "silent_corruption": 250
+      },
+      "proposed": {
+        "detected": 250,
+        "silent_corruption": 0
+      }
+    },
+    "splice_other_file": {
+      "trials": 250,
+      "base": {
+        "detected": 0,
+        "silent_corruption": 171
+      },
+      "proposed": {
+        "detected": 250,
+        "silent_corruption": 0
+      }
+    },
+    "manifest_edit": {
+      "trials": 250,
+      "base": {
+        "detected": 0,
+        "silent_corruption": 250
+      },
+      "proposed": {
+        "detected": 250,
+        "silent_corruption": 0
+      }
+    }
+  },
+  "e3_ecb_image": {
+    "bytes": 589824,
+    "original": {
+      "entropy_bits_per_byte": 2.7606,
+      "repeated_block_pct": 98.15,
+      "chi_square": 28424073.4
+    },
+    "base": {
+      "entropy_bits_per_byte": 6.5531,
+      "repeated_block_pct": 98.15,
+      "chi_square": 1512580.3
+    },
+    "proposed": {
+      "entropy_bits_per_byte": 7.9997,
+      "repeated_block_pct": 0,
+      "chi_square": 242.4
+    }
+  },
+  "e4_determinism": {
+    "base_identical_ciphertexts": true,
+    "base_bit_difference_pct": 0,
+    "proposed_identical_ciphertexts": false,
+    "proposed_bit_difference_pct": 49.84
+  },
+  "e5_avalanche": {
+    "trials": 300,
+    "aes_block_1bit_key_change_pct": 49.85,
+    "aes_block_1bit_plaintext_change_pct": 49.86,
+    "whole_file_4KiB_base_pct": 0.19,
+    "whole_file_4KiB_proposed_pct": 50.01,
+    "ideal_pct": 50,
+    "paper_reported": {
+      "proposed_key": 61,
+      "proposed_plaintext": 64,
+      "aes_key": 51,
+      "aes_plaintext": 55
+    }
+  },
+  "e6_performance": [
+    {
+      "size_kib": 1,
+      "base_enc_ms": 0.12,
+      "base_dec_ms": 0.151,
+      "proposed_enc_ms": 2.899,
+      "proposed_dec_ms": 1.991,
+      "base_enc_mbps": 8.1,
+      "proposed_enc_mbps": 0.3,
+      "base_ct_overhead_bytes": 16,
+      "proposed_ct_overhead_bytes": 16,
+      "proposed_manifest_bytes": 926
+    },
+    {
+      "size_kib": 16,
+      "base_enc_ms": 0.122,
+      "base_dec_ms": 0.118,
+      "proposed_enc_ms": 2.935,
+      "proposed_dec_ms": 1.889,
+      "base_enc_mbps": 128.3,
+      "proposed_enc_mbps": 5.3,
+      "base_ct_overhead_bytes": 16,
+      "proposed_ct_overhead_bytes": 16,
+      "proposed_manifest_bytes": 927
+    },
+    {
+      "size_kib": 256,
+      "base_enc_ms": 0.187,
+      "base_dec_ms": 0.174,
+      "proposed_enc_ms": 3.042,
+      "proposed_dec_ms": 2.131,
+      "base_enc_mbps": 1338.7,
+      "proposed_enc_mbps": 82.2,
+      "base_ct_overhead_bytes": 16,
+      "proposed_ct_overhead_bytes": 16,
+      "proposed_manifest_bytes": 928
+    },
+    {
+      "size_kib": 1024,
+      "base_enc_ms": 0.994,
+      "base_dec_ms": 0.429,
+      "proposed_enc_ms": 4.975,
+      "proposed_dec_ms": 4.884,
+      "base_enc_mbps": 1006.4,
+      "proposed_enc_mbps": 201,
+      "base_ct_overhead_bytes": 16,
+      "proposed_ct_overhead_bytes": 16,
+      "proposed_manifest_bytes": 929
+    },
+    {
+      "size_kib": 4096,
+      "base_enc_ms": 4.642,
+      "base_dec_ms": 1.682,
+      "proposed_enc_ms": 9.177,
+      "proposed_dec_ms": 8.444,
+      "base_enc_mbps": 861.7,
+      "proposed_enc_mbps": 435.9,
+      "base_ct_overhead_bytes": 16,
+      "proposed_ct_overhead_bytes": 64,
+      "proposed_manifest_bytes": 929
+    },
+    {
+      "size_kib": 16384,
+      "base_enc_ms": 17.245,
+      "base_dec_ms": 8.465,
+      "proposed_enc_ms": 41.008,
+      "proposed_dec_ms": 44.344,
+      "base_enc_mbps": 927.8,
+      "proposed_enc_mbps": 390.2,
+      "base_ct_overhead_bytes": 16,
+      "proposed_ct_overhead_bytes": 256,
+      "proposed_manifest_bytes": 931
+    },
+    {
+      "size_kib": 32768,
+      "base_enc_ms": 70.421,
+      "base_dec_ms": 92.235,
+      "proposed_enc_ms": 91.615,
+      "proposed_dec_ms": 101.26,
+      "base_enc_mbps": 454.4,
+      "proposed_enc_mbps": 349.3,
+      "base_ct_overhead_bytes": 16,
+      "proposed_ct_overhead_bytes": 512,
+      "proposed_manifest_bytes": 931
+    }
+  ],
+  "e7_sharing": {
+    "file_kib": 1024,
+    "rows": [
+      {
+        "recipients": 1,
+        "encrypt_and_share_ms": 5.71,
+        "manifest_bytes": 843
+      },
+      {
+        "recipients": 2,
+        "encrypt_and_share_ms": 5.93,
+        "manifest_bytes": 1059
+      },
+      {
+        "recipients": 5,
+        "encrypt_and_share_ms": 8.88,
+        "manifest_bytes": 1707
+      },
+      {
+        "recipients": 10,
+        "encrypt_and_share_ms": 13.33,
+        "manifest_bytes": 2787
+      },
+      {
+        "recipients": 25,
+        "encrypt_and_share_ms": 17.58,
+        "manifest_bytes": 6027
+      },
+      {
+        "recipients": 50,
+        "encrypt_and_share_ms": 35.85,
+        "manifest_bytes": 11427
+      },
+      {
+        "recipients": 100,
+        "encrypt_and_share_ms": 78.1,
+        "manifest_bytes": 22227
+      }
+    ],
+    "add_recipient_later_ms": 2.738
+  },
+  "e8_revocation": [
+    {
+      "size_kib": 64,
+      "rekey_ms": 4.35
+    },
+    {
+      "size_kib": 1024,
+      "rekey_ms": 7.56
+    },
+    {
+      "size_kib": 4096,
+      "rekey_ms": 18.36
+    },
+    {
+      "size_kib": 16384,
+      "rekey_ms": 72.54
+    }
+  ],
+  "e9_primitives": {
+    "p256_keygen_ms": 0.276,
+    "p256_ecdh_ms": 0.27,
+    "p256_ecdsa_sign_ms": 0.23,
+    "p256_ecdsa_verify_ms": 0.263,
+    "rsa3072_keygen_ms": 144.7,
+    "rsa3072_oaep_wrap_ms": 0.126,
+    "rsa3072_oaep_unwrap_ms": 1.423,
+    "key_bits": {
+      "p256_public": 256,
+      "rsa3072_public": 3072
+    }
+  }
+}

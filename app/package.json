@@ -1,0 +1,18 @@
+{
+  "name": "cryptovault",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Group 18 - Secure Cloud File Sharing Using Hybrid Cryptography (MERN demo): base AES-ECC (Rehman et al. 2021) vs proposed authenticated hybrid envelope (AES-256-GCM + ECDH P-256 + ECDSA P-256)",
+  "type": "module",
+  "workspaces": ["crypto-core", "server", "client"],
+  "scripts": {
+    "dev": "concurrently -n server,client -c cyan,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
+    "start": "npm run build -w client && npm run start -w server",
+    "seed": "npm run seed -w server",
+    "test": "node --test crypto-core/test/*.test.js",
+    "bench": "node --expose-gc bench/run.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
